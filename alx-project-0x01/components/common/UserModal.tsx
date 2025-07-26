@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { UserProps, UserModalProps } from "@/interfaces";
 
 const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
-  const [user, setUser] = useState<UserProps>({
+  const [post, setUser] = useState<UserProps>({
     id: Date.now(), // generate unique ID
     name: "",
     username: "",
@@ -71,7 +71,7 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(user);
+    onSubmit(post);
     onClose();
   };
 
@@ -83,21 +83,21 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               name="name"
-              value={user.name}
+              value={post.name}
               onChange={handleChange}
               placeholder="Full Name"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="username"
-              value={user.username}
+              value={post.username}
               onChange={handleChange}
               placeholder="Username"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="email"
-              value={user.email}
+              value={post.email}
               onChange={handleChange}
               placeholder="Email"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -105,14 +105,14 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
             />
             <input
               name="phone"
-              value={user.phone}
+              value={post.phone}
               onChange={handleChange}
               placeholder="Phone Number"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="website"
-              value={user.website}
+              value={post.website}
               onChange={handleChange}
               placeholder="Website"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -123,42 +123,42 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               name="address.street"
-              value={user.address.street}
+              value={post.address.street}
               onChange={handleChange}
               placeholder="Street"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="address.suite"
-              value={user.address.suite}
+              value={post.address.suite}
               onChange={handleChange}
               placeholder="Suite"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="address.city"
-              value={user.address.city}
+              value={post.address.city}
               onChange={handleChange}
               placeholder="City"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="address.zipcode"
-              value={user.address.zipcode}
+              value={post.address.zipcode}
               onChange={handleChange}
               placeholder="Zipcode"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="geo.lat"
-              value={user.address.geo.lat}
+              value={post.address.geo.lat}
               onChange={handleChange}
               placeholder="Latitude"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="geo.lng"
-              value={user.address.geo.lng}
+              value={post.address.geo.lng}
               onChange={handleChange}
               placeholder="Longitude"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -169,21 +169,21 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               name="company.name"
-              value={user.company.name}
+              value={post.company.name}
               onChange={handleChange}
               placeholder="Company Name"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="company.catchPhrase"
-              value={user.company.catchPhrase}
+              value={post.company.catchPhrase}
               onChange={handleChange}
               placeholder="Catch Phrase"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <input
               name="company.bs"
-              value={user.company.bs}
+              value={post.company.bs}
               onChange={handleChange}
               placeholder="Business Strategy"
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
